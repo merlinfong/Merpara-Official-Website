@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavBar } from './components/NavBar';
-import { HomeGateway } from './components/HomeGateway';
+import { LandingPage } from './components/LandingPage';
 import { FashionPage } from './components/FashionPage';
 import { MarketingPage } from './components/MarketingPage';
 import { Footer } from './components/Footer';
@@ -24,7 +24,7 @@ function App() {
   };
 
   return (
-    <div className="font-sans text-merpara-dark bg-[#fcfcfc] min-h-screen selection:bg-merpara-coral selection:text-white">
+    <div className="font-sans text-merpara-dark bg-[#ffffff] min-h-screen selection:bg-merpara-coral selection:text-white">
       <NavBar 
         activePage={activePage} 
         setActivePage={setActivePage} 
@@ -33,7 +33,7 @@ function App() {
       
       <main className="flex flex-col w-full overflow-hidden min-h-screen">
         {activePage === PageView.HOME && (
-          <HomeGateway setPage={setActivePage} />
+          <LandingPage setPage={setActivePage} scrollToSection={scrollToSection} />
         )}
         
         {activePage === PageView.FASHION && (

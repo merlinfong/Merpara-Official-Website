@@ -5,6 +5,7 @@ interface TeamSectionProps {
     filter?: 'fashion' | 'marketing';
 }
 
+// Updated data with placeholder realistic images
 const allMembers: TeamMember[] = [
   {
     name: "Merlin Feng",
@@ -12,7 +13,7 @@ const allMembers: TeamMember[] = [
     description: "Drives cross-border strategy and ROI execution. Connecting East & West.",
     location: "CN/US",
     tags: ['fashion', 'marketing'],
-    imageSeed: "merlin"
+    imageSeed: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop"
   },
   {
     name: "Matthew Joy",
@@ -20,7 +21,7 @@ const allMembers: TeamMember[] = [
     description: "U.S. influencer partnership expert aligning content roadmap with business goals.",
     location: "US",
     tags: ['fashion', 'marketing'],
-    imageSeed: "matthew"
+    imageSeed: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop"
   },
   {
     name: "Anastasia Cui",
@@ -28,7 +29,7 @@ const allMembers: TeamMember[] = [
     description: "Leads product development and China supply-chain operations.",
     location: "CN",
     tags: ['fashion'],
-    imageSeed: "anastasia"
+    imageSeed: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
   },
   {
     name: "Felicia Joy",
@@ -36,7 +37,7 @@ const allMembers: TeamMember[] = [
     description: "Turns brand DNA into cohesive visuals that actually convert.",
     location: "US",
     tags: ['marketing'],
-    imageSeed: "felicia"
+    imageSeed: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop"
   },
   {
     name: "Jenny Paola",
@@ -44,7 +45,7 @@ const allMembers: TeamMember[] = [
     description: "Designs global influencer strategies for clear growth.",
     location: "CO",
     tags: ['marketing', 'fashion'],
-    imageSeed: "jenny"
+    imageSeed: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop"
   },
   {
     name: "Will Guo",
@@ -52,7 +53,7 @@ const allMembers: TeamMember[] = [
     description: "Translates aesthetic into production-ready designs. Fabrics, cost, and quality.",
     location: "CN",
     tags: ['fashion'],
-    imageSeed: "will"
+    imageSeed: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop"
   },
   {
     name: "Linuccia Zhang",
@@ -60,7 +61,7 @@ const allMembers: TeamMember[] = [
     description: "Builds season plans and pricing ladders for commercial sharpness.",
     location: "CN",
     tags: ['fashion'],
-    imageSeed: "linuccia"
+    imageSeed: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1972&auto=format&fit=crop"
   },
   {
     name: "Jhon Cubillos",
@@ -68,7 +69,7 @@ const allMembers: TeamMember[] = [
     description: "Ensures high-efficiency communication and relationship building.",
     location: "CO",
     tags: ['marketing'],
-    imageSeed: "jhon"
+    imageSeed: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
   },
   {
     name: "Paola Cubillos",
@@ -76,7 +77,7 @@ const allMembers: TeamMember[] = [
     description: "Ensures global team coordination and project execution.",
     location: "CO",
     tags: ['marketing'],
-    imageSeed: "paola"
+    imageSeed: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=1974&auto=format&fit=crop"
   }
 ];
 
@@ -85,34 +86,45 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ filter }) => {
     ? allMembers.filter(m => m.tags.includes(filter))
     : allMembers;
 
+  const hoverColorClass = filter === 'fashion' 
+    ? "group-hover:border-merpara-coral" 
+    : filter === 'marketing'
+    ? "group-hover:border-merpara-purple"
+    : "group-hover:border-merpara-blue";
+    
+  const hoverTextClass = filter === 'fashion'
+    ? "text-merpara-coral"
+    : filter === 'marketing'
+    ? "text-merpara-purple"
+    : "text-merpara-blue";
+
   return (
-    <section id={SectionID.TEAM} className="py-24 bg-white border-t border-gray-100">
+    <section id={SectionID.TEAM} className="py-32 bg-white">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-merpara-dark mb-4">Our Team</h2>
-            <p className="text-gray-500 max-w-2xl">
+        <div className="flex flex-col items-center text-center mb-24">
+            <h2 className="text-5xl font-serif font-bold text-merpara-dark mb-6">Our Team</h2>
+            <p className="text-gray-500 max-w-2xl text-lg">
                 {filter === 'fashion' 
                     ? "A fusion of Western aesthetics and Chinese manufacturing precision." 
                     : "A global network of strategists ensuring your brand's voice is heard."}
             </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-x-12 gap-y-16">
           {displayMembers.map((member, index) => (
-            <div key={index} className="group relative w-64 text-center">
-              <div className="w-32 h-32 mx-auto bg-gray-100 rounded-full mb-6 overflow-hidden relative">
+            <div key={index} className="group w-64 text-center cursor-default">
+              <div className={`w-48 h-48 mx-auto bg-gray-100 mb-8 overflow-hidden relative border-4 border-transparent transition-all duration-300 rounded-full ${hoverColorClass}`}>
                  <img 
-                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${member.imageSeed}&backgroundColor=e5e7eb`} 
+                    src={member.imageSeed} 
                     alt={member.name}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" 
                  />
-                 {/* Flag Badge logic could go here based on location */}
               </div>
               
-              <h3 className="font-bold text-lg text-merpara-dark">{member.name}</h3>
-              <p className="text-merpara-blue text-xs font-bold uppercase tracking-wider mb-2">{member.role}</p>
-              <p className="text-sm text-gray-500 leading-snug mb-3">{member.description}</p>
-              <span className="text-[10px] font-mono bg-gray-50 px-2 py-1 rounded text-gray-400 border border-gray-100">
+              <h3 className="font-serif font-bold text-xl text-merpara-dark mb-1">{member.name}</h3>
+              <p className={`text-xs font-bold uppercase tracking-widest mb-4 ${hoverTextClass}`}>{member.role}</p>
+              <p className="text-sm text-gray-500 leading-relaxed mb-4">{member.description}</p>
+              <span className="inline-block px-2 py-1 bg-gray-50 border border-gray-100 rounded text-[10px] font-mono text-gray-400">
                 {member.location}
               </span>
             </div>
