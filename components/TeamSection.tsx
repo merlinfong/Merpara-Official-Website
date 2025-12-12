@@ -5,23 +5,55 @@ interface TeamSectionProps {
     filter?: 'fashion' | 'marketing';
 }
 
-// Updated data with placeholder realistic images
+// Updated data based on new content
 const allMembers: TeamMember[] = [
   {
     name: "Merlin Feng",
     role: "Founder & CEO",
-    description: "Drives cross-border strategy and ROI execution. Connecting East & West.",
+    description: "Deep expertise in cross-border e-commerce and influencer marketing. Focuses on building growth systems connecting brands with global consumers.",
     location: "CN/US",
     tags: ['fashion', 'marketing'],
     imageSeed: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop"
   },
   {
+    name: "Jenny Paola Cubillos",
+    role: "Marketing Lead",
+    description: "Responsible for overall influencer marketing project planning and execution coordination, ensuring efficient cross-regional team collaboration.",
+    location: "CO",
+    tags: ['marketing'],
+    imageSeed: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop"
+  },
+  {
     name: "Matthew Joy",
-    role: "Co-Founder & Strategist",
-    description: "U.S. influencer partnership expert aligning content roadmap with business goals.",
+    role: "Co-founder & Content Strategist",
+    description: "Develops clear, convertible content strategies from brand and user perspectives.",
     location: "US",
-    tags: ['fashion', 'marketing'],
+    tags: ['marketing'],
     imageSeed: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    name: "Felicia Joy",
+    role: "Creative Director",
+    description: "Controls creative quality, ensuring content aligns with platform ecology and brand consistency.",
+    location: "US",
+    tags: ['marketing'],
+    imageSeed: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop"
+  },
+  {
+    name: "Jhon Cubillos",
+    role: "Influencer Outreach Specialist",
+    description: "Responsible for global influencer resource expansion and negotiation, building long-term stable partnerships.",
+    location: "CO",
+    tags: ['marketing'],
+    imageSeed: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
+  },
+  {
+    name: "Jenny Rodriguez",
+    role: "Influencer Marketing Manager",
+    description: "Responsible for project execution, progress management, and results review, ensuring every collaboration is evaluated and optimized.",
+    location: "CO",
+    tags: ['marketing'],
+    imageSeed: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop"
   },
   {
     name: "Anastasia Cui",
@@ -30,22 +62,6 @@ const allMembers: TeamMember[] = [
     location: "CN",
     tags: ['fashion'],
     imageSeed: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
-  },
-  {
-    name: "Felicia Joy",
-    role: "Creative Director",
-    description: "Turns brand DNA into cohesive visuals that actually convert.",
-    location: "US",
-    tags: ['marketing'],
-    imageSeed: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop"
-  },
-  {
-    name: "Jenny Paola",
-    role: "Marketing Lead",
-    description: "Designs global influencer strategies for clear growth.",
-    location: "CO",
-    tags: ['marketing', 'fashion'],
-    imageSeed: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop"
   },
   {
     name: "Will Guo",
@@ -62,22 +78,6 @@ const allMembers: TeamMember[] = [
     location: "CN",
     tags: ['fashion'],
     imageSeed: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1972&auto=format&fit=crop"
-  },
-  {
-    name: "Jhon Cubillos",
-    role: "Outreach Specialist",
-    description: "Ensures high-efficiency communication and relationship building.",
-    location: "CO",
-    tags: ['marketing'],
-    imageSeed: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
-  },
-  {
-    name: "Paola Cubillos",
-    role: "Marketing Lead",
-    description: "Ensures global team coordination and project execution.",
-    location: "CO",
-    tags: ['marketing'],
-    imageSeed: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=1974&auto=format&fit=crop"
   }
 ];
 
