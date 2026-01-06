@@ -42,25 +42,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="text-6xl lg:text-8xl font-serif font-black text-merpara-dark leading-[0.95] mb-8"
+              className="text-6xl lg:text-7xl font-serif font-black text-merpara-dark leading-[1.1] mb-8"
             >
-              We build <br/> brands
+              Bridging Markets, <br/> Empowering Growth
             </motion.h1>
             
-            <p className="text-lg text-gray-600 mb-8 font-light leading-relaxed">
-              Founded in Shenzhen and headquartered in Jiangmen in China’s Greater Bay Area, Merpara is a global team with 10+ years of experience in influencer marketing and cross-border e-commerce. We help brands achieve measurable growth through ROI-driven strategy, advanced AI tools, and deep local market insight—bridging East and West with transparent, long-term partnerships.
+            <p className="text-lg text-gray-600 mb-10 font-light leading-relaxed">
+              Founded in Shenzhen and headquartered in the Greater Bay Area, Merpara is a global team with over a decade of expertise in cross-border commerce and influencer marketing. We bridge East and West by combining China’s agile supply chain with deep local market insights in the US and Latin America. Whether driving ROI for established brands or incubating new influencer labels, we are your transparent, long-term strategic partner dedicated to measurable success.
             </p>
-
-            <div className="mb-10 space-y-2 border-l-4 border-merpara-coral pl-6 py-2">
-                <div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-merpara-coral">For Brands</span>
-                    <p className="text-xl font-medium text-merpara-dark">Your Trusted Global ROI-Driven Strategic Business Partner</p>
-                </div>
-                <div className="pt-2">
-                    <span className="text-xs font-bold uppercase tracking-widest text-merpara-blue">For Creators</span>
-                    <p className="text-xl font-medium text-merpara-dark">Elevate Your Influence, Ignite Shared Success.</p>
-                </div>
-            </div>
 
             <div className="flex flex-wrap gap-4 mb-12">
                <button 
@@ -96,7 +85,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
                transition={{ delay: 0.2 }}
                className="relative rounded-[40px] overflow-hidden mt-12 shadow-2xl"
              >
-                {/* Hero Image A: Fashion/Creator */}
                 <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop" className="object-cover w-full h-full hover:scale-105 transition-transform duration-700" alt="Creator Fashion" />
                 <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-xs font-bold text-merpara-dark">#FashionSupply</div>
              </motion.div>
@@ -106,7 +94,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
                transition={{ delay: 0.4 }}
                className="relative rounded-[40px] overflow-hidden mb-12 shadow-2xl"
              >
-                {/* Hero Image B: Dashboard/ROI */}
                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" className="object-cover w-full h-full hover:scale-105 transition-transform duration-700" alt="ROI Dashboard" />
                  <div className="absolute top-6 right-6 bg-merpara-coral text-white px-4 py-2 rounded-xl text-xs font-bold">ROI Driven</div>
              </motion.div>
@@ -119,7 +106,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
       <section className="py-12 border-y border-gray-100 bg-gray-50/50">
          <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12 text-gray-500 opacity-80">
             <span className="text-xs font-bold uppercase tracking-widest mr-4">We've worked with:</span>
-            {/* Logos updated as requested */}
             <span className="font-sans text-xl font-bold tracking-tight">ZAFUL</span>
             <span className="font-serif text-xl font-bold italic">dresslily</span>
             <span className="font-sans text-xl font-extrabold">Ulike</span>
@@ -140,10 +126,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
             </p>
          </div>
 
-         {/* SERVICE CARDS */}
          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            {/* Card 1 */}
             <div 
                 onClick={() => setPage(PageView.FASHION)}
                 className="bg-gray-50 rounded-[40px] p-10 hover:bg-gray-100 transition-colors cursor-pointer group border border-transparent hover:border-gray-200"
@@ -157,7 +140,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
                </p>
             </div>
 
-            {/* Card 2 */}
             <div 
                 onClick={() => setPage(PageView.MARKETING)}
                 className="bg-gray-50 rounded-[40px] p-10 hover:bg-gray-100 transition-colors cursor-pointer group border border-transparent hover:border-gray-200"
@@ -171,7 +153,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
                </p>
             </div>
 
-            {/* Card 3 */}
             <div className="bg-gray-50 rounded-[40px] p-10 hover:bg-gray-100 transition-colors cursor-pointer group border border-transparent hover:border-gray-200">
                <div className="w-12 h-12 rounded-2xl bg-merpara-blue/10 text-merpara-blue flex items-center justify-center mb-6 group-hover:bg-merpara-blue group-hover:text-white transition-colors">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
@@ -181,7 +162,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
                   Conversion-first systems that connect content to sales—trackable links, promo codes, performance dashboards, and iterative improvement for scalable growth.
                </p>
             </div>
-
          </div>
       </section>
 
@@ -194,7 +174,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
             </p>
          </div>
 
-         {/* Marquee Effect for Tags */}
          <div className="relative flex overflow-x-hidden">
             <div className="animate-marquee whitespace-nowrap py-4 flex gap-4">
                {[...tags, ...tags, ...tags].map((tag, i) => (
@@ -236,7 +215,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
               </div>
 
               <div className="bg-gray-100 rounded-[50px] p-4 lg:p-12 flex flex-col lg:flex-row overflow-hidden relative border border-gray-200">
-                  {/* Main Visual - Dashboard (Image C) */}
                   <div className="flex-1 relative rounded-[40px] overflow-hidden h-[500px] shadow-xl bg-white border border-gray-100 group">
                       <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop" className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" alt="Campaign Reporting" />
                       
@@ -244,7 +222,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
                          <div className="w-2 h-2 rounded-full bg-merpara-coral animate-pulse" /> Live Campaign
                       </div>
                       
-                      {/* Floating metrics simulating dashboard */}
                       <div className="absolute bottom-8 left-8 right-8 flex flex-col gap-3">
                          <div className="bg-white/95 backdrop-blur px-6 py-4 rounded-2xl border border-gray-100 shadow-sm flex justify-between items-center">
                             <div>
@@ -256,7 +233,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
                       </div>
                   </div>
 
-                  {/* Sidebar Tabs */}
                   <div className="w-full lg:w-48 flex lg:flex-col gap-2 mt-4 lg:mt-0 lg:ml-4">
                       <div className="flex-1 bg-white border border-gray-200 rounded-3xl flex items-center justify-center cursor-pointer hover:bg-[#f2994a] hover:text-white hover:border-[#f2994a] transition-all duration-300 relative group overflow-hidden py-4 lg:py-0" onClick={() => setPage(PageView.FASHION)}>
                          <span className="lg:-rotate-90 font-bold text-lg whitespace-nowrap">Supply Chain</span>
