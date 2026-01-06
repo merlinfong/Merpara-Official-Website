@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ArrowRight, Instagram, Youtube, Twitter, Facebook, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, Instagram, Youtube, Facebook } from 'lucide-react';
 import { PageView, SectionID } from '../types';
-import { Button } from './Button';
 
 interface LandingPageProps {
   setPage: (page: PageView) => void;
@@ -27,6 +26,29 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
     { label: 'Manufacturing', color: 'bg-gray-100 text-gray-700' },
     { label: 'Global logistics', color: 'bg-merpara-coral/10 text-merpara-coral' },
     { label: 'Brand incubation', color: 'bg-merpara-blue/10 text-merpara-blue' },
+  ];
+
+  // Global Social Partners Data with Custom SVGs for accuracy (TikTok, X)
+  const socialPartners = [
+    { name: 'YouTube', icon: <Youtube size={20} /> },
+    { name: 'Instagram', icon: <Instagram size={20} /> },
+    { name: 'Facebook', icon: <Facebook size={20} /> },
+    { 
+      name: 'TikTok', 
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-[20px] h-[20px]" fill="currentColor">
+          <path d="M12.525.02c1.31 0 2.59.32 3.72.93a6.83 6.83 0 0 1 2.38 2.22 8.35 8.35 0 0 1 .98 2.8c.03.18.04.35.04.53v2.88c-.62-.2-1.23-.48-1.82-.84a8.1 8.1 0 0 1-2.07-1.82c-.44-.52-.8-1.1-1.07-1.73v10.51a6.52 6.52 0 0 1-1.06 3.6 6.64 6.64 0 0 1-6.64 3.04 6.64 6.64 0 0 1-5.18-5.18 6.64 6.64 0 0 1 3.04-6.64c.55-.33 1.15-.56 1.78-.69v2.1c-.34.07-.67.19-.97.37a4.52 4.52 0 1 0 5.8 6.4c.18-.3.3-.63.37-.97V0h1.93z"/>
+        </svg>
+      )
+    },
+    { 
+      name: 'X', 
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-[18px] h-[18px]" fill="currentColor">
+          <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.489h2.04L6.476 2.857h-2.18l13.313 17.785z"/>
+        </svg>
+      )
+    },
   ];
 
   return (
@@ -67,11 +89,15 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
                </button>
             </div>
 
-            <p className="text-sm text-gray-400 font-medium mb-4">Supported Platforms</p>
-            <div className="flex gap-3">
-               {[Instagram, Youtube, Twitter, Facebook].map((Icon, i) => (
-                 <div key={i} className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-merpara-coral hover:text-white transition-colors cursor-default">
-                    <Icon size={18} />
+            <p className="text-sm text-gray-400 font-medium mb-4 uppercase tracking-wider">Global Partners of</p>
+            <div className="flex flex-wrap gap-4">
+               {socialPartners.map((platform, i) => (
+                 <div 
+                   key={i} 
+                   title={platform.name}
+                   className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-merpara-coral hover:text-white transition-all duration-300 cursor-default"
+                 >
+                    {platform.icon}
                  </div>
                ))}
             </div>
@@ -206,7 +232,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
          `}</style>
       </section>
 
-      {/* 6. WHERE SCALE MEETS SUBSTANCE (Interactive Widget) */}
+      {/* 6. WHERE STRATEGY MEETS EXECUTION (Interactive Widget) */}
       <section className="py-24 bg-white">
           <div className="container mx-auto px-6">
               <div className="text-center mb-16">
