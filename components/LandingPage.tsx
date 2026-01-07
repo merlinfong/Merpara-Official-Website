@@ -1,12 +1,84 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Instagram, Youtube, Facebook } from 'lucide-react';
+import { ArrowUpRight, Instagram, Youtube, Facebook, Play } from 'lucide-react';
 import { PageView, SectionID } from '../types';
 
 interface LandingPageProps {
   setPage: (page: PageView) => void;
   scrollToSection: (id: SectionID) => void;
 }
+
+interface SocialPost {
+  id: string;
+  type: 'tiktok' | 'instagram';
+  handle: string;
+  image: string;
+  url: string;
+  tag?: string;
+}
+
+const posts: SocialPost[] = [
+  { id: '1', type: 'tiktok', handle: '@elenashinohara', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop', url: 'https://www.tiktok.com/@elenashinohara/video/7439067299291598123', tag: '#Performance' },
+  { id: '2', type: 'tiktok', handle: '@tlynncarpenter', image: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000&auto=format&fit=crop', url: 'https://www.tiktok.com/@tlynncarpenter/video/7439410495234362654', tag: '#FashionSupply' },
+  { id: '3', type: 'tiktok', handle: '@cassidy_malsch', image: 'https://images.unsplash.com/photo-1529139513065-07b3b1c590e5?q=80&w=1000&auto=format&fit=crop', url: 'https://www.tiktok.com/@cassidy_malsch/video/7439814593402244395', tag: '#ROI' },
+  { id: '4', type: 'tiktok', handle: '@alexbravoxo', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop', url: 'https://www.tiktok.com/@alexbravoxo/video/7449568738770292011', tag: '#Global' },
+  { id: '5', type: 'instagram', handle: '@merpara_global', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1000&auto=format&fit=crop', url: 'https://www.instagram.com/reel/DMItnmcx4iI/', tag: '#Incubation' },
+  { id: '6', type: 'instagram', handle: '@merpara_global', image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop', url: 'https://www.instagram.com/reel/DJu8UzIMSY_/', tag: '#Logistics' },
+  { id: '7', type: 'instagram', handle: '@merpara_global', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop', url: 'https://www.instagram.com/p/DMDmEHdvpFE/', tag: '#Analytics' },
+];
+
+// Added React.FC type to handle standard props like 'key' correctly in TypeScript
+const PostCard: React.FC<{ post: SocialPost }> = ({ post }) => (
+  <div className="relative group rounded-[40px] overflow-hidden aspect-[9/14] mb-4 bg-gray-200 shadow-xl cursor-pointer">
+    <img src={post.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={post.handle} />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
+    
+    <div className="absolute top-6 left-6 flex items-center gap-2">
+      <div className="bg-white/90 backdrop-blur-md p-2 rounded-xl shadow-sm">
+        {post.type === 'tiktok' ? (
+          <svg viewBox="0 0 512 512" className="w-4 h-4 text-black fill-current">
+            <path d="M 386.160156 141.550781 C 383.457031 140.15625 380.832031 138.625 378.285156 136.964844 C 370.878906 132.070312 364.085938 126.300781 358.058594 119.785156 C 342.976562 102.523438 337.339844 85.015625 335.265625 72.757812 L 335.351562 72.757812 C 333.617188 62.582031 334.332031 56 334.441406 56 L 265.742188 56 L 265.742188 321.648438 C 265.742188 325.214844 265.742188 328.742188 265.589844 332.226562 C 265.589844 332.660156 265.550781 333.058594 265.523438 333.523438 C 265.523438 333.714844 265.523438 333.917969 265.484375 334.117188 C 265.484375 334.167969 265.484375 334.214844 265.484375 334.265625 C 264.011719 353.621094 253.011719 370.976562 236.132812 380.566406 C 227.472656 385.496094 217.675781 388.078125 207.707031 388.066406 C 175.699219 388.066406 149.757812 361.964844 149.757812 329.734375 C 149.757812 297.5 175.699219 271.398438 207.707031 271.398438 C 213.765625 271.394531 219.789062 272.347656 225.550781 274.226562 L 225.632812 204.273438 C 190.277344 199.707031 154.621094 210.136719 127.300781 233.042969 C 115.457031 243.328125 105.503906 255.605469 97.882812 269.316406 C 94.984375 274.316406 84.042969 294.410156 82.714844 327.015625 C 81.882812 345.523438 87.441406 364.699219 90.089844 372.625 L 90.089844 372.792969 C 91.757812 377.457031 98.214844 393.382812 108.742188 406.808594 C 117.230469 417.578125 127.253906 427.035156 138.5 434.882812 L 138.5 434.714844 L 138.667969 434.882812 C 171.925781 457.484375 208.800781 456 208.800781 456 C 215.183594 455.742188 236.566406 456 260.851562 444.492188 C 287.785156 431.734375 303.117188 412.726562 303.117188 412.726562 C 312.914062 401.367188 320.703125 388.425781 326.148438 374.449219 C 332.367188 358.109375 334.441406 338.507812 334.441406 330.675781 L 334.441406 189.742188 C 335.273438 190.242188 346.375 197.582031 346.375 197.582031 C 346.375 197.582031 362.367188 207.832031 387.316406 214.507812 C 405.214844 219.257812 429.332031 220.257812 429.332031 220.257812 L 429.332031 152.058594 C 420.882812 152.976562 403.726562 150.308594 386.160156 141.550781 Z M 386.160156 141.550781" />
+          </svg>
+        ) : (
+          <Instagram size={16} className="text-black" />
+        )}
+      </div>
+      {post.tag && (
+        <span className="bg-merpara-coral/90 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
+          {post.tag}
+        </span>
+      )}
+    </div>
+
+    <div className="absolute bottom-6 left-6 right-6">
+      <p className="text-white font-bold text-sm mb-1">{post.handle}</p>
+      <div className="flex items-center gap-2 text-white/70 text-xs">
+        <Play size={12} fill="white" /> View Performance
+      </div>
+    </div>
+  </div>
+);
+
+// Added React.FC type for consistency
+const ScrollingColumn: React.FC<{ postsList: SocialPost[], reverse?: boolean }> = ({ postsList, reverse = false }) => {
+  return (
+    <div className="relative h-[700px] overflow-hidden">
+      <motion.div 
+        animate={{ y: reverse ? [0, -1000] : [-1000, 0] }}
+        transition={{ 
+          duration: 30, 
+          repeat: Infinity, 
+          ease: "linear" 
+        }}
+        className="flex flex-col gap-4"
+      >
+        {[...postsList, ...postsList, ...postsList].map((post, i) => (
+          <PostCard key={`${post.id}-${i}`} post={post} />
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
 export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSection }) => {
   
@@ -28,7 +100,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
     { label: 'Brand incubation', color: 'bg-merpara-blue/10 text-merpara-blue' },
   ];
 
-  // Global Social Partners Data with Custom SVGs for accuracy (TikTok, X)
+  // Global Social Partners Data
   const socialPartners = [
     { name: 'YouTube', icon: <Youtube size={20} /> },
     { name: 'Instagram', icon: <Instagram size={20} /> },
@@ -36,8 +108,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
     { 
       name: 'TikTok', 
       icon: (
-        <svg viewBox="0 0 24 24" className="w-[20px] h-[20px]" fill="currentColor">
-          <path d="M12.525.02c1.31 0 2.59.32 3.72.93a6.83 6.83 0 0 1 2.38 2.22 8.35 8.35 0 0 1 .98 2.8c.03.18.04.35.04.53v2.88c-.62-.2-1.23-.48-1.82-.84a8.1 8.1 0 0 1-2.07-1.82c-.44-.52-.8-1.1-1.07-1.73v10.51a6.52 6.52 0 0 1-1.06 3.6 6.64 6.64 0 0 1-6.64 3.04 6.64 6.64 0 0 1-5.18-5.18 6.64 6.64 0 0 1 3.04-6.64c.55-.33 1.15-.56 1.78-.69v2.1c-.34.07-.67.19-.97.37a4.52 4.52 0 1 0 5.8 6.4c.18-.3.3-.63.37-.97V0h1.93z"/>
+        <svg viewBox="0 0 512 512" className="w-[20px] h-[20px]" fill="currentColor">
+          <path d="M 386.160156 141.550781 C 383.457031 140.15625 380.832031 138.625 378.285156 136.964844 C 370.878906 132.070312 364.085938 126.300781 358.058594 119.785156 C 342.976562 102.523438 337.339844 85.015625 335.265625 72.757812 L 335.351562 72.757812 C 333.617188 62.582031 334.332031 56 334.441406 56 L 265.742188 56 L 265.742188 321.648438 C 265.742188 325.214844 265.742188 328.742188 265.589844 332.226562 C 265.589844 332.660156 265.550781 333.058594 265.523438 333.523438 C 265.523438 333.714844 265.523438 333.917969 265.484375 334.117188 C 265.484375 334.167969 265.484375 334.214844 265.484375 334.265625 C 264.011719 353.621094 253.011719 370.976562 236.132812 380.566406 C 227.472656 385.496094 217.675781 388.078125 207.707031 388.066406 C 175.699219 388.066406 149.757812 361.964844 149.757812 329.734375 C 149.757812 297.5 175.699219 271.398438 207.707031 271.398438 C 213.765625 271.394531 219.789062 272.347656 225.550781 274.226562 L 225.632812 204.273438 C 190.277344 199.707031 154.621094 210.136719 127.300781 233.042969 C 115.457031 243.328125 105.503906 255.605469 97.882812 269.316406 C 94.984375 274.316406 84.042969 294.410156 82.714844 327.015625 C 81.882812 345.523438 87.441406 364.699219 90.089844 372.625 L 90.089844 372.792969 C 91.757812 377.457031 98.214844 393.382812 108.742188 406.808594 C 117.230469 417.578125 127.253906 427.035156 138.5 434.882812 L 138.5 434.714844 L 138.667969 434.882812 C 171.925781 457.484375 208.800781 456 208.800781 456 C 215.183594 455.742188 236.566406 456 260.851562 444.492188 C 287.785156 431.734375 303.117188 412.726562 303.117188 412.726562 C 312.914062 401.367188 320.703125 388.425781 326.148438 374.449219 C 332.367188 358.109375 334.441406 338.507812 334.441406 330.675781 L 334.441406 189.742188 C 335.273438 190.242188 346.375 197.582031 346.375 197.582031 C 346.375 197.582031 362.367188 207.832031 387.316406 214.507812 C 405.214844 219.257812 429.332031 220.257812 429.332031 220.257812 L 429.332031 152.058594 C 420.882812 152.976562 403.726562 150.308594 386.160156 141.550781 Z M 386.160156 141.550781" />
         </svg>
       )
     },
@@ -103,26 +175,18 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
             </div>
           </div>
 
-          {/* Right Images - Grid Layout */}
-          <div className="grid grid-cols-2 gap-4 h-[600px]">
-             <motion.div 
-               initial={{ y: 40, opacity: 0 }}
-               animate={{ y: 0, opacity: 1 }}
-               transition={{ delay: 0.2 }}
-               className="relative rounded-[40px] overflow-hidden mt-12 shadow-2xl"
-             >
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop" className="object-cover w-full h-full hover:scale-105 transition-transform duration-700" alt="Creator Fashion" />
-                <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-xs font-bold text-merpara-dark">#FashionSupply</div>
-             </motion.div>
-             <motion.div 
-               initial={{ y: 40, opacity: 0 }}
-               animate={{ y: 0, opacity: 1 }}
-               transition={{ delay: 0.4 }}
-               className="relative rounded-[40px] overflow-hidden mb-12 shadow-2xl"
-             >
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" className="object-cover w-full h-full hover:scale-105 transition-transform duration-700" alt="ROI Dashboard" />
-                 <div className="absolute top-6 right-6 bg-merpara-coral text-white px-4 py-2 rounded-xl text-xs font-bold">ROI Driven</div>
-             </motion.div>
+          {/* Right Content - Vertically Scrolling Social Wall */}
+          <div className="grid grid-cols-2 gap-4 h-[700px] relative overflow-hidden mask-fade-edges">
+            <div className="pt-20">
+              <ScrollingColumn postsList={posts.slice(0, 4)} />
+            </div>
+            <div>
+              <ScrollingColumn postsList={posts.slice(3, 7)} reverse />
+            </div>
+            
+            {/* Visual fade effect for smooth scroll appearance */}
+            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
           </div>
 
         </div>
