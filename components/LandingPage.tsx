@@ -12,25 +12,87 @@ interface SocialPost {
   id: string;
   type: 'tiktok' | 'instagram';
   handle: string;
-  image: string;
+  image: string; // Used as poster/fallback
+  videoUrl?: string; // Direct link to MP4 file
   url: string;
-  tag?: string;
 }
 
+// Data updated to include video support
 const posts: SocialPost[] = [
-  { id: '1', type: 'tiktok', handle: '@elenashinohara', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop', url: 'https://www.tiktok.com/@elenashinohara/video/7439067299291598123', tag: '#Performance' },
-  { id: '2', type: 'tiktok', handle: '@tlynncarpenter', image: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000&auto=format&fit=crop', url: 'https://www.tiktok.com/@tlynncarpenter/video/7439410495234362654', tag: '#FashionSupply' },
-  { id: '3', type: 'tiktok', handle: '@cassidy_malsch', image: 'https://images.unsplash.com/photo-1529139513065-07b3b1c590e5?q=80&w=1000&auto=format&fit=crop', url: 'https://www.tiktok.com/@cassidy_malsch/video/7439814593402244395', tag: '#ROI' },
-  { id: '4', type: 'tiktok', handle: '@alexbravoxo', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop', url: 'https://www.tiktok.com/@alexbravoxo/video/7449568738770292011', tag: '#Global' },
-  { id: '5', type: 'instagram', handle: '@merpara_global', image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1000&auto=format&fit=crop', url: 'https://www.instagram.com/reel/DMItnmcx4iI/', tag: '#Incubation' },
-  { id: '6', type: 'instagram', handle: '@merpara_global', image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop', url: 'https://www.instagram.com/reel/DJu8UzIMSY_/', tag: '#Logistics' },
-  { id: '7', type: 'instagram', handle: '@merpara_global', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop', url: 'https://www.instagram.com/p/DMDmEHdvpFE/', tag: '#Analytics' },
+  { 
+    id: '1', 
+    type: 'tiktok', 
+    handle: '@elenashinohara', 
+    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop', 
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-girl-in-neon-light-dancing-40102-large.mp4', // Example high-end video
+    url: 'https://www.tiktok.com/@elenashinohara/video/7439067299291598123'
+  },
+  { 
+    id: '2', 
+    type: 'tiktok', 
+    handle: '@tlynncarpenter', 
+    image: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000&auto=format&fit=crop', 
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-fashion-model-walking-on-a-rooftop-42006-large.mp4',
+    url: 'https://www.tiktok.com/@tlynncarpenter/video/7439410495234362654'
+  },
+  { 
+    id: '3', 
+    type: 'tiktok', 
+    handle: '@cassidy_malsch', 
+    image: 'https://images.unsplash.com/photo-1529139513065-07b3b1c590e5?q=80&w=1000&auto=format&fit=crop', 
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-posing-in-the-studio-with-colorful-lights-40098-large.mp4',
+    url: 'https://www.tiktok.com/@cassidy_malsch/video/7439814593402244395'
+  },
+  { 
+    id: '4', 
+    type: 'tiktok', 
+    handle: '@alexbravoxo', 
+    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop', 
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-woman-with-shopping-bags-walking-down-the-street-40114-large.mp4',
+    url: 'https://www.tiktok.com/@alexbravoxo/video/7449568738770292011'
+  },
+  { 
+    id: '5', 
+    type: 'instagram', 
+    handle: '@merpara_global', 
+    image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1000&auto=format&fit=crop', 
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-fashion-model-posing-in-a-red-dress-42003-large.mp4',
+    url: 'https://www.instagram.com/reel/DMItnmcx4iI/'
+  },
+  { 
+    id: '6', 
+    type: 'instagram', 
+    handle: '@merpara_global', 
+    image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop', 
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-walking-in-the-city-at-night-40115-large.mp4',
+    url: 'https://www.instagram.com/reel/DJu8UzIMSY_/'
+  },
+  { 
+    id: '7', 
+    type: 'instagram', 
+    handle: '@merpara_global', 
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop', 
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-businesswoman-working-at-a-coffee-shop-40111-large.mp4',
+    url: 'https://www.instagram.com/p/DMDmEHdvpFE/'
+  },
 ];
 
-// Added React.FC type to handle standard props like 'key' correctly in TypeScript
 const PostCard: React.FC<{ post: SocialPost }> = ({ post }) => (
   <div className="relative group rounded-[40px] overflow-hidden aspect-[9/14] mb-4 bg-gray-200 shadow-xl cursor-pointer">
-    <img src={post.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={post.handle} />
+    {post.videoUrl ? (
+      <video 
+        src={post.videoUrl}
+        poster={post.image}
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+      />
+    ) : (
+      <img src={post.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={post.handle} />
+    )}
+    
     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
     
     <div className="absolute top-6 left-6 flex items-center gap-2">
@@ -43,11 +105,7 @@ const PostCard: React.FC<{ post: SocialPost }> = ({ post }) => (
           <Instagram size={16} className="text-black" />
         )}
       </div>
-      {post.tag && (
-        <span className="bg-merpara-coral/90 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
-          {post.tag}
-        </span>
-      )}
+      {/* Hashtag logic removed as requested */}
     </div>
 
     <div className="absolute bottom-6 left-6 right-6">
@@ -59,14 +117,13 @@ const PostCard: React.FC<{ post: SocialPost }> = ({ post }) => (
   </div>
 );
 
-// Added React.FC type for consistency
 const ScrollingColumn: React.FC<{ postsList: SocialPost[], reverse?: boolean }> = ({ postsList, reverse = false }) => {
   return (
     <div className="relative h-[700px] overflow-hidden">
       <motion.div 
         animate={{ y: reverse ? [0, -1000] : [-1000, 0] }}
         transition={{ 
-          duration: 30, 
+          duration: 35, // Slightly slower for better video visibility
           repeat: Infinity, 
           ease: "linear" 
         }}
@@ -82,7 +139,7 @@ const ScrollingColumn: React.FC<{ postsList: SocialPost[], reverse?: boolean }> 
 
 export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSection }) => {
   
-  // Tag cloud data - Updated
+  // Tag cloud data
   const tags = [
     { label: 'Creator sourcing', color: 'bg-merpara-coral/10 text-merpara-coral' },
     { label: 'Creator outreach', color: 'bg-merpara-blue/10 text-merpara-blue' },
