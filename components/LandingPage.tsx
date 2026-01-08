@@ -50,23 +50,30 @@ const posts: SocialPost[] = [
   { 
     id: '5', 
     type: 'instagram', 
-    handle: '@merpara_global', 
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-fashion-model-posing-in-a-red-dress-42003-large.mp4',
-    url: 'https://www.instagram.com/reel/DMItnmcx4iI/'
+    handle: '@angelinagolfs', 
+    videoUrl: 'https://raw.githubusercontent.com/merlinfong/Merpara-Official-Website/main/videos/@angelinagolfs.mp4',
+    url: 'https://www.instagram.com/reel/DJu8UzIMSY_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
   },
   { 
     id: '6', 
     type: 'instagram', 
-    handle: '@merpara_global', 
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-walking-in-the-city-at-night-40115-large.mp4',
-    url: 'https://www.instagram.com/reel/DJu8UzIMSY_/'
+    handle: '@paigexmackenzie', 
+    videoUrl: 'https://raw.githubusercontent.com/merlinfong/Merpara-Official-Website/main/videos/@paigexmackenzie.mp4',
+    url: 'https://www.instagram.com/reel/DMItnmcx4iI/?utm_source=ig_web_copy_link&igsh=MWdwa2RuY2pwbnVxZA=='
   },
   { 
     id: '7', 
     type: 'instagram', 
-    handle: '@merpara_global', 
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-businesswoman-working-at-a-coffee-shop-40111-large.mp4',
+    handle: '@newladygolfer', 
+    videoUrl: 'https://raw.githubusercontent.com/merlinfong/Merpara-Official-Website/main/videos/@newladygolfer.mp4',
     url: 'https://www.instagram.com/p/DMDmEHdvpFE/'
+  },
+  { 
+    id: '8', 
+    type: 'instagram', 
+    handle: '@deck.your.decor', 
+    videoUrl: 'https://raw.githubusercontent.com/merlinfong/Merpara-Official-Website/main/videos/@deck.your.decor.mp4',
+    url: 'https://www.instagram.com/reel/DQ38BwjERF1/'
   },
 ];
 
@@ -233,7 +240,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
               <ScrollingColumn postsList={posts.slice(0, 4)} />
             </div>
             <div>
-              <ScrollingColumn postsList={posts.slice(3, 7)} reverse />
+              <ScrollingColumn postsList={posts.slice(4, 8)} reverse />
             </div>
             
             {/* Elegant deep fading masks */}
