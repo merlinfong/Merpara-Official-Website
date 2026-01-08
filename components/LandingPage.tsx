@@ -23,28 +23,28 @@ const posts: SocialPost[] = [
     id: '1', 
     type: 'tiktok', 
     handle: '@elenashinohara', 
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-girl-in-neon-light-dancing-40102-large.mp4', 
+    videoUrl: 'https://raw.githubusercontent.com/merlinfong/Merpara-Official-Website/main/videos/@elenashinohara.mp4', 
     url: 'https://www.tiktok.com/@elenashinohara/video/7439067299291598123'
   },
   { 
     id: '2', 
     type: 'tiktok', 
     handle: '@tlynncarpenter', 
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-fashion-model-walking-on-a-rooftop-42006-large.mp4',
+    videoUrl: 'https://raw.githubusercontent.com/merlinfong/Merpara-Official-Website/main/videos/@tlynncarpenter.mp4',
     url: 'https://www.tiktok.com/@tlynncarpenter/video/7439410495234362654'
   },
   { 
     id: '3', 
     type: 'tiktok', 
     handle: '@cassidy_malsch', 
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-posing-in-the-studio-with-colorful-lights-40098-large.mp4',
+    videoUrl: 'https://raw.githubusercontent.com/merlinfong/Merpara-Official-Website/main/videos/@cassidy_malsch.mp4',
     url: 'https://www.tiktok.com/@cassidy_malsch/video/7439814593402244395'
   },
   { 
     id: '4', 
     type: 'tiktok', 
     handle: '@alexbravoxo', 
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-woman-with-shopping-bags-walking-down-the-street-40114-large.mp4',
+    videoUrl: 'https://raw.githubusercontent.com/merlinfong/Merpara-Official-Website/main/videos/@alexbravoxo.mp4',
     url: 'https://www.tiktok.com/@alexbravoxo/video/7449568738770292011'
   },
   { 
