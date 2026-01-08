@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Instagram, Youtube, Facebook, Play } from 'lucide-react';
+import { ArrowUpRight, Instagram, Youtube, Facebook } from 'lucide-react';
 import { PageView, SectionID } from '../types';
 
 interface LandingPageProps {
@@ -12,73 +12,78 @@ interface SocialPost {
   id: string;
   type: 'tiktok' | 'instagram';
   handle: string;
-  image: string; // 封面图/占位图
-  videoUrl?: string; // GitHub 托管的直链：https://raw.githubusercontent.com/[USER]/[REPO]/main/videos/file.mp4
+  image: string; // Poster/Fallback
+  videoUrl?: string; // GitHub Raw URL recommended
   url: string;
 }
 
-// 示例数据：请根据您的 GitHub 仓库信息替换 [YOUR_...] 部分
+// Data with your specific creators
 const posts: SocialPost[] = [
   { 
     id: '1', 
     type: 'tiktok', 
     handle: '@elenashinohara', 
     image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop', 
-    videoUrl: 'https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/videos/elenashinohara.mp4', 
-    url: 'https://www.tiktok.com/@elenashinohara'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-girl-in-neon-light-dancing-40102-large.mp4', 
+    url: 'https://www.tiktok.com/@elenashinohara/video/7439067299291598123'
   },
   { 
     id: '2', 
     type: 'tiktok', 
     handle: '@tlynncarpenter', 
     image: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000&auto=format&fit=crop', 
-    videoUrl: 'https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/videos/tlynncarpenter.mp4',
-    url: 'https://www.tiktok.com/@tlynncarpenter'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-fashion-model-walking-on-a-rooftop-42006-large.mp4',
+    url: 'https://www.tiktok.com/@tlynncarpenter/video/7439410495234362654'
   },
   { 
     id: '3', 
     type: 'tiktok', 
     handle: '@cassidy_malsch', 
     image: 'https://images.unsplash.com/photo-1529139513065-07b3b1c590e5?q=80&w=1000&auto=format&fit=crop', 
-    videoUrl: 'https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/videos/cassidy_malsch.mp4',
-    url: 'https://www.tiktok.com/@cassidy_malsch'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-posing-in-the-studio-with-colorful-lights-40098-large.mp4',
+    url: 'https://www.tiktok.com/@cassidy_malsch/video/7439814593402244395'
   },
   { 
     id: '4', 
     type: 'tiktok', 
     handle: '@alexbravoxo', 
     image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop', 
-    videoUrl: 'https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/videos/alexbravoxo.mp4',
-    url: 'https://www.tiktok.com/@alexbravoxo'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-woman-with-shopping-bags-walking-down-the-street-40114-large.mp4',
+    url: 'https://www.tiktok.com/@alexbravoxo/video/7449568738770292011'
   },
   { 
     id: '5', 
     type: 'instagram', 
     handle: '@merpara_global', 
     image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1000&auto=format&fit=crop', 
-    videoUrl: 'https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/videos/merpara_1.mp4',
-    url: 'https://www.instagram.com/merpara_global'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-fashion-model-posing-in-a-red-dress-42003-large.mp4',
+    url: 'https://www.instagram.com/reel/DMItnmcx4iI/'
   },
   { 
     id: '6', 
     type: 'instagram', 
     handle: '@merpara_global', 
     image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop', 
-    videoUrl: 'https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/videos/merpara_2.mp4',
-    url: 'https://www.instagram.com/merpara_global'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-walking-in-the-city-at-night-40115-large.mp4',
+    url: 'https://www.instagram.com/reel/DJu8UzIMSY_/'
   },
   { 
     id: '7', 
     type: 'instagram', 
     handle: '@merpara_global', 
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop', 
-    videoUrl: 'https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/videos/merpara_3.mp4',
-    url: 'https://www.instagram.com/merpara_global'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-businesswoman-working-at-a-coffee-shop-40111-large.mp4',
+    url: 'https://www.instagram.com/p/DMDmEHdvpFE/'
   },
 ];
 
 const PostCard: React.FC<{ post: SocialPost }> = ({ post }) => (
-  <div className="relative group rounded-[40px] overflow-hidden aspect-[9/14] mb-4 bg-gray-200 shadow-xl cursor-pointer">
+  <a 
+    href={post.url} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="relative block group rounded-[40px] overflow-hidden aspect-[9/14] mb-6 bg-gray-100 shadow-2xl transition-transform active:scale-95"
+  >
     {post.videoUrl ? (
       <video 
         src={post.videoUrl}
@@ -87,49 +92,58 @@ const PostCard: React.FC<{ post: SocialPost }> = ({ post }) => (
         muted 
         loop 
         playsInline
-        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100 grayscale-[0.2] group-hover:grayscale-0"
+        className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 opacity-85 group-hover:opacity-100 grayscale-[0.1] group-hover:grayscale-0"
       />
     ) : (
-      <img src={post.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={post.handle} />
+      <img src={post.image} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt={post.handle} />
     )}
     
-    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+    {/* Deep dynamic gradient for high-end text legibility */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
     
-    <div className="absolute top-6 left-6 flex items-center gap-2">
-      <div className="bg-white/90 backdrop-blur-md p-2.5 rounded-2xl shadow-sm">
+    {/* Platform Icon Pill */}
+    <div className="absolute top-6 left-6">
+      <div className="bg-white/90 backdrop-blur-xl p-3 rounded-2xl shadow-xl flex items-center justify-center group-hover:bg-merpara-coral group-hover:text-white transition-all duration-500">
         {post.type === 'tiktok' ? (
-          <svg viewBox="0 0 512 512" className="w-4 h-4 text-black fill-current">
+          <svg viewBox="0 0 512 512" className="w-4 h-4 fill-current">
             <path d="M 386.160156 141.550781 C 383.457031 140.15625 380.832031 138.625 378.285156 136.964844 C 370.878906 132.070312 364.085938 126.300781 358.058594 119.785156 C 342.976562 102.523438 337.339844 85.015625 335.265625 72.757812 L 335.351562 72.757812 C 333.617188 62.582031 334.332031 56 334.441406 56 L 265.742188 56 L 265.742188 321.648438 C 265.742188 325.214844 265.742188 328.742188 265.589844 332.226562 C 265.589844 332.660156 265.550781 333.058594 265.523438 333.523438 C 265.523438 333.714844 265.523438 333.917969 265.484375 334.117188 C 265.484375 334.167969 265.484375 334.214844 265.484375 334.265625 C 264.011719 353.621094 253.011719 370.976562 236.132812 380.566406 C 227.472656 385.496094 217.675781 388.078125 207.707031 388.066406 C 175.699219 388.066406 149.757812 361.964844 149.757812 329.734375 C 149.757812 297.5 175.699219 271.398438 207.707031 271.398438 C 213.765625 271.394531 219.789062 272.347656 225.550781 274.226562 L 225.632812 204.273438 C 190.277344 199.707031 154.621094 210.136719 127.300781 233.042969 C 115.457031 243.328125 105.503906 255.605469 97.882812 269.316406 C 94.984375 274.316406 84.042969 294.410156 82.714844 327.015625 C 81.882812 345.523438 87.441406 364.699219 90.089844 372.625 L 90.089844 372.792969 C 91.757812 377.457031 98.214844 393.382812 108.742188 406.808594 C 117.230469 417.578125 127.253906 427.035156 138.5 434.882812 L 138.5 434.714844 L 138.667969 434.882812 C 171.925781 457.484375 208.800781 456 208.800781 456 C 215.183594 455.742188 236.566406 456 260.851562 444.492188 C 287.785156 431.734375 303.117188 412.726562 303.117188 412.726562 C 312.914062 401.367188 320.703125 388.425781 326.148438 374.449219 C 332.367188 358.109375 334.441406 338.507812 334.441406 330.675781 L 334.441406 189.742188 C 335.273438 190.242188 346.375 197.582031 346.375 197.582031 C 346.375 197.582031 362.367188 207.832031 387.316406 214.507812 C 405.214844 219.257812 429.332031 220.257812 429.332031 220.257812 L 429.332031 152.058594 C 420.882812 152.976562 403.726562 150.308594 386.160156 141.550781 Z M 386.160156 141.550781" />
           </svg>
         ) : (
-          <Instagram size={16} className="text-black" />
+          <Instagram size={16} />
         )}
       </div>
     </div>
 
-    <div className="absolute bottom-8 left-8 right-8">
-      <p className="text-white font-serif font-bold text-xl mb-1 tracking-tight">{post.handle}</p>
-      <div className="flex items-center gap-2 text-white/60 text-xs font-medium uppercase tracking-widest">
-        <Play size={12} fill="white" className="opacity-60" /> Live Performance
+    {/* Handle with premium typography */}
+    <div className="absolute bottom-10 left-8 right-8">
+      <p className="text-white font-serif font-black text-2xl mb-1 tracking-tighter drop-shadow-md">
+        {post.handle}
+      </p>
+      <div className="flex items-center gap-2 text-white/50 text-[10px] font-black uppercase tracking-[0.3em]">
+        Engagement Analysis
       </div>
     </div>
-  </div>
+  </a>
 );
 
 const ScrollingColumn: React.FC<{ postsList: SocialPost[], reverse?: boolean }> = ({ postsList, reverse = false }) => {
+  // To achieve seamless looping, we triple the items and animate the translate Y percentage
   return (
-    <div className="relative h-[800px] overflow-hidden">
+    <div className="relative h-[850px] overflow-hidden">
       <motion.div 
-        animate={{ y: reverse ? [0, -1200] : [-1200, 0] }}
+        animate={{ y: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
         transition={{ 
           duration: 40, 
           repeat: Infinity, 
           ease: "linear" 
         }}
-        className="flex flex-col gap-6"
+        className="flex flex-col"
       >
-        {[...postsList, ...postsList, ...postsList].map((post, i) => (
-          <PostCard key={`${post.id}-${i}`} post={post} />
+        {/* Doubling the list is enough for a seamless loop if animated to -50% */}
+        {[...postsList, ...postsList].map((post, i) => (
+          <div key={`${post.id}-${i}`} className="px-1">
+            <PostCard post={post} />
+          </div>
         ))}
       </motion.div>
     </div>
@@ -137,7 +151,6 @@ const ScrollingColumn: React.FC<{ postsList: SocialPost[], reverse?: boolean }> 
 };
 
 export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSection }) => {
-  
   const tags = [
     { label: 'Creator sourcing', color: 'bg-merpara-coral/10 text-merpara-coral' },
     { label: 'Creator outreach', color: 'bg-merpara-blue/10 text-merpara-blue' },
@@ -229,8 +242,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
             </div>
           </div>
 
-          {/* Right Content - Vertically Scrolling Social Wall */}
-          <div className="grid grid-cols-2 gap-6 h-[800px] relative overflow-hidden">
+          {/* Right Content - Seamless Vertical Scrolling Wall */}
+          <div className="grid grid-cols-2 gap-8 h-[850px] relative overflow-hidden">
             <div className="pt-24">
               <ScrollingColumn postsList={posts.slice(0, 4)} />
             </div>
@@ -238,8 +251,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
               <ScrollingColumn postsList={posts.slice(3, 7)} reverse />
             </div>
             
-            <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-white via-white/80 to-transparent z-10 pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white via-white/80 to-transparent z-10 pointer-events-none" />
+            {/* Enhanced premium fading masks to prevent flashing edges */}
+            <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-white via-white/80 to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-white via-white/80 to-transparent z-10 pointer-events-none" />
           </div>
 
         </div>
