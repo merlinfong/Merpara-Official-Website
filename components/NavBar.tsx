@@ -57,9 +57,6 @@ export const NavBar: React.FC<NavBarProps> = ({ activePage, setActivePage, scrol
 
           {/* Right Actions */}
           <div className="hidden md:flex items-center gap-6">
-             <button className="text-sm font-medium text-gray-600 hover:text-merpara-dark">
-                Sign In
-             </button>
              <button 
                 onClick={() => scrollToSection(SectionID.CONTACT)}
                 className="group flex items-center gap-2 bg-[#ccff00] text-merpara-dark px-6 py-3 rounded-full text-sm font-bold transition-transform hover:scale-105"

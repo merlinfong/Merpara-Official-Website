@@ -1,7 +1,6 @@
 import React from 'react';
 import { SectionID, PageView } from '../types';
-import { Instagram, Linkedin, Twitter, Youtube, Facebook } from 'lucide-react';
-import { MerparaLogo } from './MerparaLogo';
+import { Instagram, Linkedin, Facebook } from 'lucide-react';
 
 interface FooterProps {
     activePage: PageView;
@@ -9,70 +8,121 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ activePage }) => {
   return (
-    <footer id={SectionID.CONTACT} className="bg-black text-white pt-24 pb-12 rounded-t-[40px] mt-0 relative overflow-hidden">
+    <footer id={SectionID.CONTACT} className="bg-black text-white pt-32 pb-12 rounded-t-[60px] mt-0 relative overflow-visible">
       
-      {/* Big Header */}
-      <div className="container mx-auto px-6 mb-24 overflow-hidden">
-         <div className="text-[12vw] leading-[0.9] font-serif font-black tracking-tighter text-center opacity-90">
+      {/* Big Header - Fixed clipping of 'g' and 'y' by using large bottom padding and overflow-visible */}
+      <div className="container mx-auto px-6 mb-24 overflow-visible">
+         <div className="text-6xl md:text-[8vw] leading-[1.3] font-serif font-black tracking-tighter text-center opacity-90 overflow-visible">
              <span className="block">Let's work</span>
-             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-merpara-coral to-merpara-purple">together</span>
+             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-merpara-coral via-merpara-purple to-merpara-blue pb-16 pt-4 mb-4">
+                together
+             </span>
          </div>
       </div>
 
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-24">
             
             {/* Column 1 */}
             <div className="flex flex-col gap-6">
-               <div className="border border-white/30 rounded-full px-6 py-2 w-fit text-sm font-bold uppercase tracking-widest">
+               <div className="border border-white/20 rounded-full px-6 py-2 w-fit text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
                   Company
                </div>
-               <a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a>
-               <a href="#" className="text-gray-400 hover:text-white transition-colors">About</a>
-               <a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a>
+               <div className="flex flex-col gap-4">
+                 <a href="#" className="text-gray-500 hover:text-merpara-coral transition-colors text-sm font-medium">Home</a>
+                 <a href="#" className="text-gray-500 hover:text-merpara-coral transition-colors text-sm font-medium">About</a>
+                 <a href="#" className="text-gray-500 hover:text-merpara-coral transition-colors text-sm font-medium">Careers</a>
+               </div>
             </div>
 
             {/* Column 2 */}
             <div className="flex flex-col gap-6">
-               <div className="border border-white/30 rounded-full px-6 py-2 w-fit text-sm font-bold uppercase tracking-widest">
+               <div className="border border-white/20 rounded-full px-6 py-2 w-fit text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
                   Work
                </div>
-               <a href="#" className="text-gray-400 hover:text-white transition-colors">Case Studies</a>
-               <a href="#" className="text-gray-400 hover:text-white transition-colors">Fashion</a>
-               <a href="#" className="text-gray-400 hover:text-white transition-colors">Marketing</a>
+               <div className="flex flex-col gap-4">
+                 <a href="#" className="text-gray-500 hover:text-merpara-purple transition-colors text-sm font-medium">Case Studies</a>
+                 <a href="#" className="text-gray-500 hover:text-merpara-purple transition-colors text-sm font-medium">Fashion Supply Chain</a>
+                 <a href="#" className="text-gray-500 hover:text-merpara-purple transition-colors text-sm font-medium">Global Marketing</a>
+               </div>
             </div>
 
              {/* Column 3 */}
             <div className="flex flex-col gap-6">
-               <div className="border border-white/30 rounded-full px-6 py-2 w-fit text-sm font-bold uppercase tracking-widest">
+               <div className="border border-white/20 rounded-full px-6 py-2 w-fit text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
                   Legal
                </div>
-               <a href="#" className="text-gray-400 hover:text-white transition-colors">Platform Terms</a>
-               <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-               <a href="#" className="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+               <div className="flex flex-col gap-4">
+                 <a href="#" className="text-gray-500 hover:text-merpara-blue transition-colors text-sm font-medium">Platform Terms</a>
+                 <a href="#" className="text-gray-500 hover:text-merpara-blue transition-colors text-sm font-medium">Privacy Policy</a>
+                 <a href="#" className="text-gray-500 hover:text-merpara-blue transition-colors text-sm font-medium">Cookie Policy</a>
+               </div>
             </div>
 
-             {/* Column 4 */}
+             {/* Column 4 - CONTACT */}
             <div className="flex flex-col gap-6">
-               <div className="border border-white/30 rounded-full px-6 py-2 w-fit text-sm font-bold uppercase tracking-widest">
-                  General
+               <div className="border border-white/20 rounded-full px-6 py-2 w-fit text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
+                  Contact
                </div>
-               <a href="mailto:business@merpara.com" className="text-gray-400 hover:text-white transition-colors">Contact</a>
-               <a href="#" className="text-gray-400 hover:text-white transition-colors">Sign In</a>
+               <div className="flex flex-col gap-4">
+                 <a href="mailto:business@merpara.com" className="text-gray-500 hover:text-white transition-colors text-sm font-medium">business@merpara.com</a>
+                 <a href="mailto:jenny@merpara.com" className="text-gray-500 hover:text-white transition-colors text-sm font-medium">jenny@merpara.com</a>
+               </div>
             </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-end border-t border-white/10 pt-10">
-           <div className="mb-6 md:mb-0">
-               <MerparaLogo className="h-8 w-auto text-white mb-4" />
-               <p className="text-gray-500 text-xs">&copy; 2025 Merpara Inc. All rights reserved.</p>
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end border-t border-white/10 pt-12 gap-8">
+           <div className="text-center md:text-left">
+               <div className="mb-6 inline-block md:block">
+                  <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2177.93 266.51" className="h-6 md:h-8 w-auto">
+                    <defs>
+                      <style>{`.cls-footer-1 { fill: #ff6f61; } .cls-footer-2 { fill: #2d9cdb; }`}</style>
+                    </defs>
+                    <g id="Layer_6">
+                      <g>
+                        <path className="cls-footer-2" d="M1868.31,130.57c.68,1.3,2.49,1.42,3.33.23,5.63-7.92,10.95-15.41,16.28-22.89,19.38-27.21,38.71-54.45,58.21-81.58,3.56-4.96,7.54-9.68,11.75-14.1,10.24-10.74,22.98-14.07,37.1-10.45,14.41,3.69,22.84,13.96,26.63,27.92,1.29,4.77,1.38,9.96,1.37,14.96,0,44.8-.16,89.6-.26,134.4,0,1.94.11,3.88.38,5.81,1.03,7.27,3.75,13.63,11.2,16.35,7.96,2.91,15.38,1.11,21.81-4.25,3.64-3.03,6.85-6.58,10.41-9.72,2.93-2.59,6.38-3.99,10.37-2.92,4.45,1.2,5.47,3.87,2.76,7.53-7.73,10.4-15.37,20.88-23.38,31.06-16.9,21.5-47.29,20.59-63.05-1.79-8.01-11.37-10.95-24.34-11.01-37.99-.14-30.39-.05-60.78-.06-91.16,0-1.52.84-4.41-1-4.92s-8.45,12.49-12.53,18.83c-.55.85-.35,2.24-.35,3.39-.02,26.21-.25,52.43.07,78.63.23,19.02,5.49,36.45,19.23,50.37,21.34,21.6,56.19,21.04,76.15-1.88,10.09-11.59,18.63-24.52,27.87-36.84.15-.2.31-.41.46-.62,1.18-1.57,3.61-1.35,4.48.41,2.51,5.07,2.29,10.31-.65,14.91-9.59,15.02-19.1,30.33-34.26,40.64-34.26,23.29-79.39,10.31-97.61-27.94-5.99-12.57-8.64-25.93-8.78-39.75-.19-18.58-.07-37.16-.08-55.73,0-.12,0-.24,0-.37,0-1.89-2.45-2.66-3.53-1.11h0c-11.91,16.97-23.79,33.96-35.72,50.93-5.29,7.53-10.5,9.49-19.37,7.4-10.99-2.59-19.18-8.47-24.18-18.97-14.85-31.19-29.99-62.25-45.03-93.35-2.57-5.31-5.17-10.61-7.8-15.9-13.97-28.1-37.65-42.08-67.93-45.34-13.51-1.46-27.24-.77-40.88-1.04-2.59-.05-5.19.05-7.78-.03-5.04-.15-7.83-2.55-7.85-6.67-.02-4.15,3.13-6.9,8.15-6.92,10.08-.04,20.17-.23,30.24.08,14.39.44,28.65,2.07,42.4,6.6,24.27,8,42.59,23.3,54.15,46.06,12.78,25.15,24.93,50.62,37.36,75.95.28.58.58,1.15.92,1.8ZM2041.13,220.3c2.19-1.75,1.02-5.28-1.78-5.46-16.34-1.05-25.31-9.81-28.84-27.67-.69-3.5-.92-7.14-.93-10.72-.15-45.63-.21-91.26-.36-136.89,0-2.84-.25-5.79-1.02-8.51-2.76-9.65-9.44-15.49-19.17-17.02-10.84-1.7-19.74,2.19-26.21,11.3-5.07,7.13-10.31,14.14-15.39,21.26-23.32,32.7-46.61,65.41-69.85,98.17-.71,1-1.28,2.8-.86,3.76,1.2,2.75,2.61,5.41,4.11,8.22.92,1.73,3.34,1.89,4.48.29l.43-.6c9.77-13.72,19.51-27.45,29.27-41.18,19.1-26.86,38.2-53.73,57.33-80.57,1.16-1.63,2.43-3.26,3.95-4.54,3.89-3.3,8.34-4.62,13.21-2.36,4.63,2.15,5.92,6.06,5.9,11-.15,48.38-.18,96.75-.21,145.13,0,11.03,2.16,21.51,8.99,30.51,9.75,12.84,25.6,14.93,36.94,5.88ZM1977.17,49.39c-28.9,40.74-57.21,80.65-85.75,120.88-.96,1.35-.46,3.24,1.05,3.93,1.36.62,3.45,1.24,7.14,1.93,2.5.47,3.84.39,5.38-1.8,24.76-35.21,49.61-70.35,74.41-105.53.98-1.39,2.36-2.95,2.42-4.47.17-4.37.17-8.75.15-13.43-.01-2.57-3.31-3.61-4.8-1.51Z"/>
+                        <path className="cls-footer-2" d="M1803.49,155.8c-.89-1.86-3.47-2.03-4.59-.3-5.12,7.86-9.86,15.21-14.74,22.46-8.04,11.94-15.81,24.1-24.44,35.6-17.68,23.57-41.6,35.77-71.02,36.96-9.49.38-19.01.21-28.51.28-29.5.2-59.01.4-88.51.54-1.97,0-4.06-.2-5.88-.89-3.11-1.16-4.69-4.06-3.54-6.92.84-2.1,3.35-4.47,5.49-4.91,4.02-.83,8.3-.41,12.48-.41,32.4.01,64.8.18,97.2-.01,8.03-.05,16.15-.62,24.04-2.03,21.22-3.77,37.78-15.29,49.88-32.85,14.21-20.63,27.87-41.64,41.69-62.53.68-1.03,1.21-2.79.81-3.81-1.12-2.85-2.44-5.62-3.89-8.66-.88-1.85-3.45-2.04-4.58-.33-.47.71-.92,1.38-1.36,2.04-13.48,20.09-26.97,40.16-40.43,60.26-14.25,21.28-34.77,30.89-59.76,31.42-18.41.39-36.85-.18-55.27-.14-36.7.07-73.4.27-110.1.41,0,0-1.26.32-3.87-.1-2.61-.42-5.63-2.68-5.99-6.47-.25-3.21,2.59-6.2,6.29-6.43,4.59-.29,9.21-.21,13.82-.2,50.55.11,101.1.18,151.65.39,23.53.1,42.02-8.82,55.05-28.88,14.43-22.22,29.33-44.12,43.86-66.28.95-1.45,1.05-4.06.47-5.77-.86-2.52-2.02-4.93-3.3-7.54-.89-1.82-3.41-2.01-4.56-.33-.13.19-.25.37-.38.56-15.63,23.33-31.4,46.56-46.82,70.02-9.66,14.7-23.43,21.48-40.47,21.58-47.24.28-94.48.19-141.72.21-5.31,0-8.28-2.45-8.32-6.64-.05-4.17,2.78-6.47,8.36-6.46,44.35.08,88.71.2,133.06.3,3.6,0,7.2,0,10.8-.18,11.48-.61,20.76-5.22,27.26-15,17.05-25.66,34.11-51.32,51.34-76.87,2.09-3.09,1.56-4.93-.78-7.33-6.62-6.81-14.96-8.91-24-8.92-30.24-.04-60.49.03-90.73.05-13.83,0-27.65,0-41.48-.01-5.15,0-8.17-2.67-8-6.34.17-3.67,2.43-6.68,7.82-6.69,44.5.02,89-.14,133.5.22,18.06.15,32.41,7.95,40.72,24.48,13.33,26.48,26.21,53.19,39.3,79.8,5.59,11.37,11.26,22.7,16.81,34.08,7.16,14.69,18.85,23.65,34.57,27.59.56.14,1.1.33,1.64.52,3.46,1.21,5.46,3.67,4.41,7.27-.91,3.6-3.59,5.18-7.25,4.47-17.31-3.4-31.79-11.45-40.72-27.1-6.84-11.99-12.71-24.53-18.91-36.87-2.79-5.55-5.44-11.17-8.38-17.31Z"/>
+                        <path className="cls-footer-2" d="M1586.26,41.82c-5.11,0-8.72-3.52-8.35-6.81.09-3.65,3.57-6.5,8.25-6.49,30.68,0,61.36-.05,92.04.12,21.14.12,42.32-.03,63.42,1,31.16,1.51,54.53,15.64,67.89,44.68,4.09,8.89,8.56,17.61,12.84,26.41,13.24,27.18,26.48,54.36,39.73,81.53,5.66,11.61,16.17,16.25,27.8,19.14,3.55.88,5.79,2.59,5.51,6.47-.25,3.48-3.44,5.85-7.39,5.63-1.14-.06-2.3-.23-3.41-.5-15.98-3.84-28.14-12.3-35.42-27.62-13.97-29.38-28.39-58.56-42.61-87.82-3.08-6.34-6.26-12.65-9.17-19.07-9.55-21.06-26.44-31.97-48.73-35.36-4.39-.67-8.89-.9-13.34-.92-23.61-.09-47.23-.04-70.84-.04,0-.11-52.14-.32-78.21-.34Z"/>
+                        <path className="cls-footer-2" d="M1632.46,101.83c-33.12,0-66.23,0-99.35,0-.58,0-1.15.03-1.73-.01-4.09-.26-7.37-3.41-7.34-7.01.03-3.48,3.02-6.25,7.36-6.31,9.93-.14,19.87-.11,29.8-.11,20.59,0,41.18,0,61.77.06,36.27.11,72.53.26,108.8.41,6.83.03,9.92,2.02,9.82,6.26-.1,4.29-3.47,6.65-9.79,6.66-31.24.03-62.49.02-93.73.02-1.87,0-3.74,0-5.61,0,0,0,0,.02,0,.02Z"/>
+                        <path className="cls-footer-2" d="M1612.08,131.45c-31.39,0-62.78,0-94.17,0-1.3,0-2.6.06-3.89-.03-4.12-.31-6.74-2.87-6.67-6.43.07-3.51,2.81-6.25,6.69-6.63,1.14-.11,2.3-.04,3.45-.04,28.51,0,57.03-.03,85.54,0,35.13.04,70.26.14,105.4.23,5.08.01,8.11,2.34,8.22,6.26.12,4.09-3.02,6.69-8.23,6.7-32.12.02-64.23,0-96.35,0,0-.02,0-.04,0-.06Z"/>
+                        <path className="cls-footer-2" d="M1628.16,161.76c-16.41,0-32.82,0-49.23,0-1.15,0-2.3-.03-3.45-.15-3.29-.32-5.35-2.23-5.87-5.37-.36-4.12,1.9-6.38,4.06-6.79,1.56-.59,3.35-.79,5.03-.79,32.25-.04,64.49-.05,96.74,0,2.13,0,4.33.22,6.37.79,3.33.92,4.9,3.37,4.62,6.84-.28,3.4-2.38,5.19-5.61,5.46-2.86.24-5.74.09-8.62.09-14.68,0-29.37,0-44.05,0,0-.02,0-.04,0-.06Z"/>
+                        <path className="cls-footer-1" d="M2177.91,156.74c.77,32.91-25.67,59.83-58.4,59.83-1.26,0-2.51-.04-3.75-.12-1.54-.1-2.67-1.52-2.41-3.04.62-3.73.7-7.65.14-11.66-2.45-17.52-16.97-31.16-34.61-32.55-4.73-.37-9.31.12-13.57,1.35-1.48.42-3.01-.54-3.29-2.05-.6-3.36-.92-6.81-.92-10.34,0-32.73,26.92-59.18,59.83-58.4,30.99.73,56.26,26,56.99,56.99Z"/>
+                      </g>
+                      <g>
+                        <path className="cls-footer-2" d="M.15,255.2L39.55,68.82c.69-3.25,3.55-5.57,6.87-5.57h58.3c3.88,0,7.02,3.14,7.02,7.02v135.28h1.1l63.65-138.21c1.15-2.49,3.64-4.08,6.38-4.08h58.93c4.47,0,7.8,4.12,6.86,8.49l-39.9,186.38c-.69,3.24-3.55,5.55-6.86,5.55h-33.77c-4.47,0-7.8-4.11-6.86-8.48l14.23-66.78c3.02-13.98,5.67-25.45,7.95-34.41,2.28-8.96,4.18-16.11,5.69-21.45,1.51-5.35,2.58-9.57,3.22-12.68h-1.1l-64.2,139.71c-1.14,2.49-3.64,4.09-6.38,4.09h-39.2c-3.88,0-7.02-3.14-7.02-7.02V119.87h-1.1c-1.46,9.41-2.88,18.35-4.25,26.8-1.37,8.45-2.67,16.29-3.91,23.51-1.23,7.22-2.45,13.85-3.63,19.88l-14.32,68.04c-.68,3.25-3.55,5.57-6.87,5.57H7.02c-4.46,0-7.79-4.11-6.87-8.47Z"/>
+                        <path className="cls-footer-2" d="M277.87,255.2l39.39-186.38c.69-3.25,3.55-5.57,6.87-5.57h104.7c4.44,0,7.77,4.08,6.88,8.43l-6.03,29.42c-.67,3.27-3.54,5.61-6.88,5.61h-53.93c-3.33,0-6.21,2.35-6.88,5.61l-3.57,17.49c-.89,4.35,2.44,8.42,6.88,8.42h43.48c4.5,0,7.84,4.18,6.84,8.57l-6.68,29.42c-.73,3.2-3.57,5.46-6.84,5.46h-49.55c-3.33,0-6.2,2.34-6.87,5.6l-4.91,23.8c-.9,4.36,2.43,8.44,6.87,8.44h48.12c4.46,0,7.79,4.11,6.87,8.47l-6.36,30.1c-.69,3.25-3.55,5.57-6.87,5.57h-104.64c-4.46,0-7.79-4.11-6.87-8.47Z"/>
+                        <path className="cls-footer-2" d="M457.77,256.82l39.96-189.06c.55-2.63,2.87-4.5,5.56-4.5h48.45c23.03,0,40.67,4.57,52.92,13.71,12.25,9.14,18.37,22.89,18.37,41.26,0,12.25-2.01,22.46-6.03,30.64-4.02,8.18-9,14.74-14.94,19.67-4.02,8.18-9,14.74-14.94,19.67-4.35,3.61-8.67,6.59-12.96,8.92-2.61,1.42-3.76,4.54-2.58,7.27l30.63,71.01c1.62,3.75-1.13,7.93-5.21,7.93h-45.8c-2.38,0-4.51-1.49-5.33-3.72l-24-65.48c-.82-2.24-2.95-3.72-5.33-3.72h-1.44c-2.68,0-5,1.88-5.55,4.5l-13.58,63.93c-.56,2.62-2.87,4.5-5.55,4.5h-42c-3.61,0-6.3-3.32-5.56-6.85ZM535.49,143.19c-.74,3.53,1.95,6.84,5.56,6.84h0c3.56,0,7.04-.52,10.42-1.58,3.38-1.05,6.42-2.69,9.12-4.94,2.69-2.24,4.84-5.16,6.44-8.77,1.6-3.61,2.4-7.97,2.4-13.09,0-4.84-1.37-8.96-4.11-12.34-2.74-3.38-7.54-5.07-14.39-5.07h-2.65c-2.69,0-5.01,1.88-5.56,4.51l-7.22,34.43Z"/>
+                        <path className="cls-footer-2" d="M663.03,255.24l39.4-186.44c.68-3.23,3.54-5.54,6.84-5.54h45.47c17.73,0,31.96,2.65,42.7,7.95,10.74,5.3,18.55,12.5,23.44,21.59,4.89,9.09,7.33,19.26,7.33,30.5,0,11.97-2.12,22.55-6.37,31.74-4.25,9.18-10.28,16.91-18.1,23.17-7.81,6.26-17.09,10.99-27.83,14.19-10.74,3.2-22.6,4.8-35.57,4.8h-6.07c-3.33,0-6.2,2.34-6.87,5.6l-11.4,55.31c-.67,3.25-3.53,5.58-6.85,5.58h-39.28c-4.44,0-7.76-4.09-6.84-8.44ZM739.95,144.87c-.93,4.35,2.39,8.45,6.84,8.45h0c5.67,0,10.58-1.23,14.74-3.7,4.16-2.47,7.38-5.85,9.66-10.14,2.28-4.29,3.43-9.14,3.43-14.53,0-4.57-1.44-8.7-4.32-12.41-2.88-3.7-7.61-5.55-14.19-5.55h-2.43c-3.3,0-6.15,2.31-6.84,5.53l-6.89,32.35Z"/>
+                        <path className="cls-footer-2" d="M842.71,253.47l94.85-186.38c1.2-2.35,3.61-3.84,6.26-3.84h58.2c3.65,0,6.69,2.79,6.99,6.43l15.68,186.38c.34,4.09-2.89,7.61-6.99,7.61h-37.83c-3.78,0-6.88-2.99-7.01-6.76l-.88-24.04c-.14-3.77-3.24-6.76-7.01-6.76h-50.13c-2.75,0-5.24,1.6-6.39,4.11l-13.39,29.35c-1.14,2.5-3.64,4.11-6.39,4.11h-39.7c-5.24,0-8.63-5.53-6.26-10.2ZM940.91,183.34h21.89c3.97,0,7.16-3.3,7.01-7.27l-1.8-50.31c-.09-4.48-.18-8.91-.27-13.3-.09-4.39-.09-8.54,0-12.47h-.82c-1.37,4.2-2.86,8.32-4.46,12.34-1.6,4.02-3.36,8.14-5.28,12.34l-22.64,48.69c-2.16,4.65,1.23,9.98,6.36,9.98Z"/>
+                        <path className="cls-footer-2" d="M1072.6,255.2l39.39-186.38c.69-3.25,3.55-5.57,6.87-5.57h47.36c23.03,0,40.67,4.57,52.92,13.71,12.25,9.14,18.37,22.89,18.37,41.26,0,12.25-2.01,22.46-6.03,30.64-4.02,8.18-9,14.74-14.94,19.67-4.07,3.38-8.12,6.2-12.14,8.47-3.1,1.74-4.33,5.58-2.93,8.84l29.35,68.03c2,4.63-1.4,9.8-6.44,9.8h-42.82c-2.94,0-5.58-1.84-6.59-4.6l-23.45-63.98c-.96-2.61-3.45-4.35-6.23-4.35h0c-3.13,0-5.84,2.19-6.49,5.26l-13.19,62.11c-.69,3.24-3.55,5.56-6.87,5.56h-39.26c-4.46,0-7.79-4.11-6.87-8.47ZM1149.97,143.19c-.74,3.53,1.95,6.84,5.56,6.84h0c3.56,0,7.04-.52,10.42-1.58,3.38-1.05,6.42-2.69,9.12-4.94,2.69-2.24,4.84-5.16,6.44-8.77,1.6-3.61,2.4-7.97,2.4-13.09,0-4.84-1.37-8.96-4.11-12.34-2.74-3.38-7.54-5.07-14.39-5.07h-1.57c-3.32,0-6.19,2.33-6.87,5.58l-6.99,33.36Z"/>
+                        <path className="cls-footer-2" d="M1259.81,253.47l94.85-186.38c1.2-2.35,3.61-3.84,6.26-3.84h58.2c3.65,0,6.69,2.79,6.99,6.43l15.68,186.38c.34,4.09-2.89,7.61-6.99,7.61h-37.83c-3.78,0-6.88-2.99-7.01-6.76l-.88-24.04c-.14-3.77-3.24-6.76-7.01-6.76h-50.13c-2.75,0-5.24,1.6-6.39,4.11l-13.39,29.35c-1.14,2.5-3.64,4.11-6.39,4.11h-39.7c-5.24,0-8.63-5.53-6.26-10.2ZM1358.02,183.34h21.89c3.97,0,7.16-3.3,7.01-7.27l-1.8-50.31c-.09-4.48-.18-8.91-.27-13.3-.09-4.39-.09-8.54,0-12.47h-.82c-1.37,4.2-2.86,8.32-4.46,12.34-1.6,4.02-3.36,8.14-5.28,12.34l-22.64,48.69c-2.16,4.65,1.23,9.98,6.36,9.98Z"/>
+                      </g>
+                    </g>
+                  </svg>
+               </div>
+               <p className="text-gray-500 text-[10px] uppercase tracking-widest">&copy; 2025 Merpara Inc. All rights reserved.</p>
            </div>
            
            <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors cursor-pointer text-white"><Instagram size={18}/></div>
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors cursor-pointer text-white"><Twitter size={18}/></div>
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors cursor-pointer text-white"><Linkedin size={18}/></div>
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors cursor-pointer text-white"><Youtube size={18}/></div>
+              <a href="https://www.instagram.com/themerpara/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-merpara-coral hover:border-merpara-coral transition-all cursor-pointer text-white shadow-xl">
+                 <Instagram size={18}/>
+              </a>
+              <a href="https://x.com/TheMerpara" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all cursor-pointer text-white shadow-xl">
+                 <svg viewBox="0 0 24 24" aria-hidden="true" className="w-[14px] h-[14px] fill-current">
+                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                 </svg>
+              </a>
+              <a href="https://www.linkedin.com/company/merpara" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-merpara-blue hover:border-merpara-blue transition-all cursor-pointer text-white shadow-xl">
+                 <Linkedin size={18}/>
+              </a>
+              <a href="https://www.facebook.com/people/Merpara/61563985003513/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-merpara-orange hover:border-merpara-orange transition-all cursor-pointer text-white shadow-xl">
+                 <Facebook size={18}/>
+              </a>
+              <a href="https://www.tiktok.com/@merpara.us" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-black hover:border-black transition-all cursor-pointer text-white shadow-xl">
+                 <svg viewBox="0 0 512 512" className="w-[16px] h-[16px] fill-current">
+                    <path d="M 386.160156 141.550781 C 383.457031 140.15625 380.832031 138.625 378.285156 136.964844 C 370.878906 132.070312 364.085938 126.300781 358.058594 119.785156 C 342.976562 102.523438 337.339844 85.015625 335.265625 72.757812 L 335.351562 72.757812 C 333.617188 62.582031 334.332031 56 334.441406 56 L 265.742188 56 L 265.742188 321.648438 C 265.742188 325.214844 265.742188 328.742188 265.589844 332.226562 C 265.589844 332.660156 265.550781 333.058594 265.523438 333.523438 C 265.523438 333.714844 265.523438 333.917969 265.484375 334.117188 C 265.484375 334.167969 265.484375 334.214844 265.484375 334.265625 C 264.011719 353.621094 253.011719 370.976562 236.132812 380.566406 C 227.472656 385.496094 217.675781 388.078125 207.707031 388.066406 C 175.699219 388.066406 149.757812 361.964844 149.757812 329.734375 C 149.757812 297.5 175.699219 271.398438 207.707031 271.398438 C 213.765625 271.394531 219.789062 272.347656 225.550781 274.226562 L 225.632812 204.273438 C 190.277344 199.707031 154.621094 210.136719 127.300781 233.042969 C 115.457031 243.328125 105.503906 255.605469 97.882812 269.316406 C 94.984375 274.316406 84.042969 294.410156 82.714844 327.015625 C 81.882812 345.523438 87.441406 364.699219 90.089844 372.625 L 90.089844 372.792969 C 91.757812 377.457031 98.214844 393.382812 108.742188 406.808594 C 117.230469 417.578125 127.253906 427.035156 138.5 434.882812 L 138.5 434.714844 L 138.667969 434.882812 C 171.925781 457.484375 208.800781 456 208.800781 456 C 215.183594 455.742188 236.566406 456 260.851562 444.492188 C 287.785156 431.734375 303.117188 412.726562 303.117188 412.726562 C 312.914062 401.367188 320.703125 388.425781 326.148438 374.449219 C 332.367188 358.109375 334.441406 338.507812 334.441406 330.675781 L 334.441406 189.742188 C 335.273438 190.242188 346.375 197.582031 346.375 197.582031 C 346.375 197.582031 362.367188 207.832031 387.316406 214.507812 C 405.214844 219.257812 429.332031 220.257812 429.332031 220.257812 L 429.332031 152.058594 C 420.882812 152.976562 403.726562 150.308594 386.160156 141.550781 Z"></path>
+                 </svg>
+              </a>
            </div>
         </div>
       </div>
