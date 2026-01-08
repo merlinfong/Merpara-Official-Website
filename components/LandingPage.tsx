@@ -75,7 +75,7 @@ const PostCard: React.FC<{ post: SocialPost }> = ({ post }) => (
     href={post.url} 
     target="_blank" 
     rel="noopener noreferrer"
-    className="relative block group rounded-[40px] overflow-hidden aspect-[9/14] mb-8 bg-black shadow-2xl transition-transform active:scale-95"
+    className="relative block group rounded-[40px] overflow-hidden aspect-[9/14] mb-10 bg-black shadow-2xl transition-transform active:scale-95"
   >
     <video 
       src={post.videoUrl}
@@ -83,15 +83,16 @@ const PostCard: React.FC<{ post: SocialPost }> = ({ post }) => (
       muted 
       loop 
       playsInline
+      preload="metadata"
       className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100 grayscale-[0.2] group-hover:grayscale-0"
     />
     
     {/* Deep dynamic gradient for handle legibility */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-700" />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 transition-opacity duration-700" />
     
     {/* Minimal Platform Icon */}
     <div className="absolute top-6 left-6">
-      <div className="bg-white/80 backdrop-blur-xl p-2.5 rounded-2xl shadow-xl flex items-center justify-center group-hover:bg-merpara-coral group-hover:text-white transition-all duration-500">
+      <div className="bg-white/70 backdrop-blur-2xl p-2.5 rounded-2xl shadow-xl flex items-center justify-center group-hover:bg-merpara-coral group-hover:text-white transition-all duration-500">
         {post.type === 'tiktok' ? (
           <svg viewBox="0 0 512 512" className="w-3.5 h-3.5 fill-current">
             <path d="M 386.160156 141.550781 C 383.457031 140.15625 380.832031 138.625 378.285156 136.964844 C 370.878906 132.070312 364.085938 126.300781 358.058594 119.785156 C 342.976562 102.523438 337.339844 85.015625 335.265625 72.757812 L 335.351562 72.757812 C 333.617188 62.582031 334.332031 56 334.441406 56 L 265.742188 56 L 265.742188 321.648438 C 265.742188 325.214844 265.742188 328.742188 265.589844 332.226562 C 265.589844 332.660156 265.550781 333.058594 265.523438 333.523438 C 265.523438 333.714844 265.523438 333.917969 265.484375 334.117188 C 265.484375 334.167969 265.484375 334.214844 265.484375 334.265625 C 264.011719 353.621094 253.011719 370.976562 236.132812 380.566406 C 227.472656 385.496094 217.675781 388.078125 207.707031 388.066406 C 175.699219 388.066406 149.757812 361.964844 149.757812 329.734375 C 149.757812 297.5 175.699219 271.398438 207.707031 271.398438 C 213.765625 271.394531 219.789062 272.347656 225.550781 274.226562 L 225.632812 204.273438 C 190.277344 199.707031 154.621094 210.136719 127.300781 233.042969 C 115.457031 243.328125 105.503906 255.605469 97.882812 269.316406 C 94.984375 274.316406 84.042969 294.410156 82.714844 327.015625 C 81.882812 345.523438 87.441406 364.699219 90.089844 372.625 L 90.089844 372.792969 C 91.757812 377.457031 98.214844 393.382812 108.742188 406.808594 C 117.230469 417.578125 127.253906 427.035156 138.5 434.882812 L 138.5 434.714844 L 138.667969 434.882812 C 171.925781 457.484375 208.800781 456 208.800781 456 C 215.183594 455.742188 236.566406 456 260.851562 444.492188 C 287.785156 431.734375 303.117188 412.726562 303.117188 412.726562 C 312.914062 401.367188 320.703125 388.425781 326.148438 374.449219 C 332.367188 358.109375 334.441406 338.507812 334.441406 330.675781 L 334.441406 189.742188 C 335.273438 190.242188 346.375 197.582031 346.375 197.582031 C 346.375 197.582031 362.367188 207.832031 387.316406 214.507812 C 405.214844 219.257812 429.332031 220.257812 429.332031 220.257812 L 429.332031 152.058594 C 420.882812 152.976562 403.726562 150.308594 386.160156 141.550781 Z M 386.160156 141.550781" />
@@ -102,9 +103,9 @@ const PostCard: React.FC<{ post: SocialPost }> = ({ post }) => (
       </div>
     </div>
 
-    {/* Elegant handle - Smaller and positioned with care */}
+    {/* Elegant handle - Extra small for a minimalist luxury vibe */}
     <div className="absolute bottom-8 left-8 right-8">
-      <p className="text-white font-serif font-bold text-lg md:text-xl tracking-tight drop-shadow-lg opacity-90 group-hover:opacity-100 transition-opacity">
+      <p className="text-white font-sans font-medium text-sm tracking-tight opacity-90 group-hover:opacity-100 transition-opacity">
         {post.handle}
       </p>
     </div>
@@ -113,18 +114,19 @@ const PostCard: React.FC<{ post: SocialPost }> = ({ post }) => (
 
 const ScrollingColumn: React.FC<{ postsList: SocialPost[], reverse?: boolean }> = ({ postsList, reverse = false }) => {
   return (
-    <div className="relative h-[900px] overflow-hidden">
+    <div className="relative h-[950px] overflow-hidden">
       <motion.div 
         animate={{ y: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
         transition={{ 
-          duration: 65, // Slower speed for a more premium, high-fashion feel
+          duration: 90, // Extremely slow for ultimate premium feel
           repeat: Infinity, 
           ease: "linear" 
         }}
         className="flex flex-col"
       >
+        {/* Doubling list is enough for seamless looping at -50% translateY */}
         {[...postsList, ...postsList].map((post, i) => (
-          <div key={`${post.id}-${i}`} className="px-2">
+          <div key={`${post.id}-${i}`} className="px-3">
             <PostCard post={post} />
           </div>
         ))}
@@ -226,7 +228,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
           </div>
 
           {/* Right Content - Seamless Vertical Scrolling Wall */}
-          <div className="grid grid-cols-2 gap-10 h-[900px] relative overflow-hidden">
+          <div className="grid grid-cols-2 gap-10 h-[950px] relative overflow-hidden">
             <div className="pt-32">
               <ScrollingColumn postsList={posts.slice(0, 4)} />
             </div>
