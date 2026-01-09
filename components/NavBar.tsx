@@ -23,10 +23,10 @@ export const NavBar: React.FC<NavBarProps> = ({ activePage, setActivePage, scrol
   }, []);
 
   const navLinks = [
-    { label: 'Overview', action: () => { setActivePage(PageView.HOME); scrollToSection(SectionID.TOP); } },
-    { label: 'Supply Chain', action: () => setActivePage(PageView.FASHION) },
-    { label: 'Marketing', action: () => setActivePage(PageView.MARKETING) },
-    { label: 'Team', action: () => scrollToSection(SectionID.TEAM) },
+    { label: 'Home', action: () => { setActivePage(PageView.HOME); scrollToSection(SectionID.TOP); } },
+    { label: 'Brand Incubation', action: () => setActivePage(PageView.FASHION) },
+    { label: 'Global Marketing', action: () => setActivePage(PageView.MARKETING) },
+    { label: 'About Us', action: () => scrollToSection(SectionID.TEAM) },
   ];
 
   return (

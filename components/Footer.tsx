@@ -100,7 +100,7 @@ export const Footer: React.FC<FooterProps> = ({ activePage }) => {
                     </g>
                   </svg>
                </div>
-               <p className="text-gray-500 text-[10px] uppercase tracking-widest">&copy; 2025 Merpara Inc. All rights reserved.</p>
+               <p className="text-gray-500 text-[10px] uppercase tracking-widest">&copy; 2026 Merpara Inc. All rights reserved.</p>
            </div>
            
            <div className="flex gap-4">

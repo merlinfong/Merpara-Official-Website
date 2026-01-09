@@ -1,0 +1,13 @@
+PLEASE UPLOAD THE FOLLOWING IMAGES TO THIS DIRECTORY:
+
+1. merlin.jpg
+2. anastasia.jpg
+3. jenny-paola.jpg
+4. matthew.jpg
+5. felicia.jpg
+6. linuccia.jpg
+7. will.jpg
+8. jenny-cubillos.jpg
+9. jhon-cubillos.jpg
+
+Ensure they are in .jpg format and match the filenames exactly (all lowercase).

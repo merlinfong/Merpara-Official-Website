@@ -64,15 +64,15 @@ export const FashionPage: React.FC<FashionPageProps> = ({ scrollToSection }) => 
             <div className="relative h-[600px] lg:h-[700px] order-1 lg:order-2">
                <motion.div 
                  initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
-                 className="absolute inset-0 rounded-none lg:rounded-tl-[100px] overflow-hidden"
+                 className="absolute inset-0 rounded-none lg:rounded-tl-[100px] overflow-hidden shadow-2xl"
                >
-                  {/* Dynamic shot of hands cutting fabric or sketching */}
-                  <img src="https://images.unsplash.com/photo-1512413914633-b5043f4041ea?q=80&w=2000&auto=format&fit=crop" alt="Craftsmanship" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+                  {/* High-end fashion editorial shot to resonate with 'Brand Your Influence' */}
+                  <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop" alt="High-end Fashion Branding" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
                   
                   {/* Floating Minimal Card */}
-                  <div className="absolute bottom-0 left-0 bg-white p-8 pr-12">
-                      <p className="font-serif font-bold text-4xl mb-1 text-merpara-dark">0-1</p>
-                      <p className="text-xs text-merpara-coral font-bold uppercase tracking-widest">Incubation</p>
+                  <div className="absolute bottom-0 left-0 bg-white p-8 pr-12 shadow-xl">
+                      <p className="font-serif font-bold text-4xl mb-1 text-merpara-dark tracking-tighter">0-1</p>
+                      <p className="text-xs text-merpara-coral font-bold uppercase tracking-[0.2em]">Incubation</p>
                   </div>
                </motion.div>
             </div>
