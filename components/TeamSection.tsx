@@ -33,8 +33,8 @@ const fashionMembers: TeamMember[] = [
   },
   {
     name: "Jenny Paola Cubillos",
-    role: "Marketing Lead",
-    description: "A bilingual strategist from Colombia with deep LATAM experience. Paola oversees global influencer and social-media strategy, designing campaign funnels and growth tactics across TikTok, Instagram, and YouTube. She brings a fresh, creative energy to every campaign and believes in honest connections and authentic storytelling, making sure your brand marketing truly resonates.",
+    role: "International Marketing Advisor",
+    description: "A bilingual marketing professional from Colombia with strong experience in LATAM markets. She brings an international perspective to brand storytelling, cross-cultural communication, and global audience understanding. Her contribution focuses on strategic insight and creative perspective, supporting brands as they think globally and communicate authentically, rather than participating in day-to-day operations.",
     location: "CO",
     tags: ['fashion'],
     imageSeed: `${GITHUB_TEAM_BASE_URL}/jenny-paola.jpg`
@@ -85,8 +85,8 @@ const marketingMembers: TeamMember[] = [
   },
   {
     name: "Jenny Paola Cubillos",
-    role: "Marketing Lead",
-    description: "Spanish/English bilingual strategist with deep LATAM expertise. Oversees global influencer and social-media strategy, Influencer funnel design, campaign pacing, and measurable growth across TikTok, Instagram, and YouTube.",
+    role: "International Marketing Advisor",
+    description: "A bilingual marketing professional from Colombia with strong experience in LATAM markets. She brings an international perspective to brand storytelling, cross-cultural communication, and global audience understanding. Her contribution focuses on strategic insight and creative perspective, supporting brands as they think globally and communicate authentically, rather than participating in day-to-day operations.",
     location: "CO",
     tags: ['marketing'],
     imageSeed: `${GITHUB_TEAM_BASE_URL}/jenny-paola.jpg`
@@ -146,7 +146,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ filter }) => {
               viewport={{ once: true }}
               className={`text-[10px] font-black uppercase tracking-[0.4em] mb-4 ${accentColorClass}`}
             >
-              The People Behind
+              GLOBAL LEADERSHIP
             </motion.div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -155,18 +155,18 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ filter }) => {
               transition={{ delay: 0.1 }}
               className="text-5xl font-serif font-bold text-merpara-dark mb-6 tracking-tight"
             >
-              Meet the Team
+              The Architects of Cross-Border Growth
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-gray-500 max-w-2xl text-lg font-light leading-relaxed"
+              className="text-gray-500 max-w-3xl text-lg font-light leading-relaxed"
             >
                 {filter === 'fashion' 
                     ? "A fusion of Western aesthetics and Chinese manufacturing precision, specialized in brand incubation." 
-                    : "A global network of strategists and creators ensuring your brand's voice reaches the right ears."}
+                    : "A strategic alliance of data experts and cultural natives. We fuse ROI-driven strategy with deep local insights across the US and LATAM. From high-level planning to on-the-ground execution, we ensure your brand voice resonates globally and converts locally."}
             </motion.p>
         </div>
 

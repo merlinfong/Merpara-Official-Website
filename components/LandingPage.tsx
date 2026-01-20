@@ -180,17 +180,25 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
           <div className="max-w-2xl">
             <motion.h1 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }} className="text-7xl lg:text-8xl font-serif font-black text-merpara-dark leading-[1.05] mb-10 tracking-tight">
-              Bridging <br/> Markets, <br/> <span className="text-merpara-coral">Empowering</span> <br/> Growth
+              The Global <br/> Engine for <br/> Influencer <br/> <span className="text-merpara-coral">Commerce</span>
             </motion.h1>
-            <p className="text-xl text-gray-500 mb-12 font-light leading-relaxed max-w-xl">
-              Founded in Shenzhen and headquartered in the Greater Bay Area, Merpara is a global team with over a decade of expertise in cross-border commerce and influencer marketing. We bridge East and West by combining China’s agile supply chain with deep local market insights in the US and Latin America. Whether driving ROI for established brands or incubating new influencer labels, we are your transparent, long-term strategic partner dedicated to measurable success.
-            </p>
+            <div className="text-xl text-gray-500 mb-12 font-light leading-relaxed max-w-xl space-y-4">
+              <p>
+                Merpara is redefining how brands and creators go global.
+              </p>
+              <p>
+                We are not just an agency; we are a transparent ecosystem. For Brands, we deliver ROI-driven influencer marketing with a direct-pay model that eliminates hidden fees. For Creators, we provide a turnkey fashion supply chain to launch your own label.
+              </p>
+              <p>
+                From China's Greater Bay Area to the world stage, we replace cross-border uncertainty with measurable success.
+              </p>
+            </div>
             <div className="flex flex-wrap gap-5 mb-16">
-               <button onClick={() => scrollToSection(SectionID.CONTACT)} className="group flex items-center gap-3 bg-merpara-coral text-white px-10 py-5 rounded-full font-bold transition-all hover:bg-merpara-dark hover:shadow-2xl shadow-merpara-coral/30">
-                 Get in touch <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+               <button onClick={() => setPage(PageView.MARKETING)} className="group flex items-center gap-3 bg-merpara-coral text-white px-10 py-5 rounded-full font-bold transition-all hover:bg-merpara-dark hover:shadow-2xl shadow-merpara-coral/30">
+                 Partner with Us <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                </button>
-               <button onClick={() => window.location.href='mailto:jenny@merpara.com'} className="flex items-center gap-3 bg-gray-50 text-merpara-dark px-10 py-5 rounded-full font-bold border border-gray-100 transition-all hover:bg-gray-100">
-                 Join Creator Pool
+               <button onClick={() => setPage(PageView.FASHION)} className="flex items-center gap-3 bg-gray-50 text-merpara-dark px-10 py-5 rounded-full font-bold border border-gray-100 transition-all hover:bg-gray-100">
+                 Build Your Brand
                </button>
             </div>
 
@@ -221,6 +229,29 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setPage, scrollToSecti
             <div><ScrollingColumn postsList={posts.slice(4, 8)} reverse /></div>
             <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-white via-white/70 to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-white via-white/70 to-transparent z-10 pointer-events-none" />
+          </div>
+        </div>
+      </section>
+
+      {/* TRUSTED BY SECTION */}
+      <section className="py-20 bg-white border-t border-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400">Trusted by Category Leaders</p>
+          </div>
+          {/* Logo Grid: Mobile 3x2, Desktop 6 in a row */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:justify-between lg:items-center gap-12 lg:gap-8 max-w-6xl mx-auto">
+            {['Zaful', 'dresslily', 'Ulike', 'TORRAS', 'Soneven', 'INIA'].map((brand, idx) => (
+              <motion.div 
+                key={idx}
+                whileHover={{ opacity: 1, scale: 1.05 }}
+                className="flex items-center justify-center opacity-60 grayscale hover:grayscale-0 transition-all duration-300"
+              >
+                <span className="text-2xl md:text-3xl font-serif font-black tracking-tighter text-[#333333] cursor-default">
+                  {brand}
+                </span>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
